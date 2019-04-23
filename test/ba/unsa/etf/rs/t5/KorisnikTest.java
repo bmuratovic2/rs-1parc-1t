@@ -1,8 +1,7 @@
 package ba.unsa.etf.rs.t5;
 
+import ba.unsa.etf.rs.parc1.Korisnik;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class KorisnikTest {
     @Test

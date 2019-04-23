@@ -1,7 +1,10 @@
-package ba.unsa.etf.rs.t5;
+package ba.unsa.etf.rs.parc1;
 
+
+import com.sun.deploy.jcp.controls.FileField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -15,6 +18,7 @@ public class KorisnikController {
     public PasswordField fldPassword;
 
     private KorisniciModel model;
+    private FileField fldPasswordRepeat;
 
     public KorisnikController(KorisniciModel model) {
         this.model = model;
@@ -99,6 +103,16 @@ public class KorisnikController {
             } else {
                 fldPassword.getStyleClass().removeAll("poljeIspravno");
                 fldPassword.getStyleClass().add("poljeNijeIspravno");
+            }
+        });
+
+        fldPasswordRepeat.textProperty().addListener((obs, oldIme, newIme) -> {
+            if (!newIme = fldPassword.textProperty()) {
+                fldPasswordRepeat.getStyleClass().removeAll("poljeNijeIspravno");
+                fldPasswordRepeat.getStyleClass().add("poljeIspravno");
+            } else {
+                fldPasswordRepeat.getStyleClass().removeAll("poljeIspravno");
+                fldPasswordRepeat.getStyleClass().add("poljeNijeIspravno");
             }
         });
     }

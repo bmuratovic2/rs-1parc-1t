@@ -1,16 +1,18 @@
-package ba.unsa.etf.rs.t5;
+package ba.unsa.etf.rs.parc1;
 
 import javafx.beans.property.SimpleStringProperty;
 
 public class Korisnik {
-    private SimpleStringProperty ime, prezime, email, username, password;
 
-    public Korisnik(String ime, String prezime, String email, String username, String password) {
+    private SimpleStringProperty ime, prezime, email, username, password, passwordrepeat;
+
+    public Korisnik(String ime, String prezime, String email, String username, String password, String passwordrepeat) {
         this.ime = new SimpleStringProperty(ime);
         this.prezime = new SimpleStringProperty(prezime);
         this.email = new SimpleStringProperty(email);
         this.username = new SimpleStringProperty(username);
         this.password = new SimpleStringProperty(password);
+        this.passwordrepeat = new SimpleStringProperty(passwordrepeat);
     }
 
     @Override
@@ -66,6 +68,7 @@ public class Korisnik {
         this.username.set(username);
     }
 
+
     public String getPassword() {
         return password.get();
     }
@@ -77,6 +80,16 @@ public class Korisnik {
     public void setPassword(String password) {
         this.password.set(password);
     }
+
+
+    public String getPasswordRepeat(){ return passwordrepeat.get();}
+
+    public SimpleStringProperty passwordrepeatProperty() { return passwordrepeat; }
+
+    public void setPasswordRepeat(String passwordrepeat){ this.passwordrepeat.set(passwordrepeat);}
+
+
+
 
 
 }
